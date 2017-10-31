@@ -1,0 +1,16 @@
+<p>
+  intake-form works!
+</p>
+
+<form [formGroup]="formGroup">
+
+  <dynamic-form-basic-control *ngFor="let controlModel of formModel" class="form-row"
+                              [group]="formGroup"
+                              [hasErrorMessaging]="controlModel.hasErrorMessages"
+                              [model]="controlModel"
+                              (dfBlur)="onBlur($event)"
+                              (dfChange)="onChange($event)"
+                              (dfFocus)="onFocus($event)"></dynamic-form-basic-control>
+</form>
+
+<pre>{{formGroup.value | json}}</pre>

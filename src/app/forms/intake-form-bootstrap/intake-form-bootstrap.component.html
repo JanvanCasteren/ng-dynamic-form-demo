@@ -1,0 +1,23 @@
+<div class="overflow-hidden" style="width: 500px;">
+
+  <h3>Input</h3>
+  <pre>{{inputFormData | json}}</pre>
+
+  <h3>Formulier</h3>
+  <form class="form-horizontal" [formGroup]="formGroup">
+
+    <dynamic-ng-bootstrap-form [group]="formGroup"
+                               [model]="formModel"
+                               (dfBlur)="onBlur($event)"
+                               (dfChange)="onChange($event)"
+                               (dfFocus)="onFocus($event)"
+    ></dynamic-ng-bootstrap-form>
+
+  </form>
+
+  <!--button (click)="test()" type="button">Test</button-->
+  <h3>Output</h3>
+  <pre>{{formGroup.value | json}}</pre>
+
+</div>
+
